@@ -1,0 +1,78 @@
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Show Room</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- adding fonts to website to make it more attractive. Use google fonts bt referencing the css on the Google Fonts APIs CDN-->
+    <link href="https://fonts.googleapis.com/css?family=Rozha+One|Roboto" rel="stylesheet"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+
+</head>
+
+<body class="bg">
+<!-- collapsable navbar begin -->
+<div th:replace="listrooms::mynav"></div>
+<!-- collapsable navbar end -->
+
+<div class="container show_bg">
+    <div class="row inputst form2_bg">
+        <label class="col-md-2 labelst">Address :</label>
+        <span class="col-md-10 t_span" th:text="${room.address}"></span>
+    </div>
+    <div class="row inputst form2_bg">
+        <label class="col-md-2 labelst">City :</label>
+        <span class="col-md-10 t_span" th:text="${room.city}"></span>
+    </div>
+    <div class="row inputst form2_bg">
+        <label class="col-md-2 labelst">State :</label>
+        <span class="col-md-10 t_span" th:text="${room.state}"></span>
+    </div>
+    <div class="row inputst form2_bg">
+        <label class="col-md-2 labelst">Listing Date :</label>
+        <span class="col-md-10 t_span" th:text="${room.listingDate}"></span>
+    </div>
+    <div class="row inputst form2_bg">
+        <label class="col-md-2 labelst">Price :</label>
+        <span class="col-md-10 t_span" th:text="${room.price}"></span>
+    </div>
+    <div class="row inputst form2_bg">
+        <label class="col-md-2 labelst">Description :</label>
+        <span class="col-md-10 t_span" th:text="${room.description}"></span>
+    </div>
+    <div class="row inputst form2_bg">
+        <label class="col-md-2 labelst">Rules :</label>
+        <span class="col-md-10 t_span" th:text="${room.rules}"></span>
+    </div>
+    <div class="row inputst form2_bg">
+        <label class="col-md-2 labelst">Wifi :</label>
+        <span class="col-md-10 t_span" th:text="${room.wifi}"></span>
+    </div>
+    <div class="row inputst form2_bg">
+        <label class="col-md-2 labelst">Private Bathroom :</label>
+        <span class="col-md-10 t_span" th:text="${room.privateBathroom}"></span>
+    </div>
+    <div class="row inputst form2_bg">
+        <label class="col-md-2 labelst">Cable :</label>
+        <span class="col-md-10 t_span" th:text="${room.Cable}"></span>
+    </div>
+    <div class="row inputst form2_bg">
+        <label class="col-md-2 labelst">Is Rented :</label>
+        <span class="col-md-10 t_span" th:text="${room.rented}"></span>
+    </div>
+
+
+</div>
+
+<!-- Latest compiled and minified JavaScript form jquery and the bootstrap-->
+<script
+        src="http://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>

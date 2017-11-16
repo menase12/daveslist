@@ -1,0 +1,96 @@
+.roboto
+{
+    font-family: 'Roboto', sans-serif;
+    color: indianred;
+}
+
+.navbar-default {
+    background-color: mistyrose;
+    border-color: #E7E7E7;
+}
+
+.bg{
+    background-image: url("pets.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.bg2{
+    background-image: linear-gradient(to right, #d3959b, #bfe6ba);
+
+}
+
+.form_bg{
+    padding: 10%;
+    border: 1px ridge gray;
+}
+
+.form2_bg{
+    padding: 10%;
+    border: 1px ridge gray;
+    opacity: 0.9;
+    background: linear-gradient(to right, #ff5f6d, #ffc371);
+
+}
+
+.form3_bg{
+    padding: 10%;
+    border: 2px ridge gray;
+    opacity: 0.7;
+    background: linear-gradient(to right, #ff5f6d, #ffc371);
+}
+
+.home_title{
+    font-size: 8em;
+    color: saddlebrown;
+    text-align: center;
+}
+
+
+.show_bg{
+    padding: 10%;
+}
+
+.labelst{
+    text-align: right;
+    font-size: medium;
+
+}
+
+.inputst{
+    padding-bottom: 1em;
+    padding-top: 1em;
+    font-size: medium;
+}
+.submitst {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.tspan{
+    color: darkblue;
+}
+
+.table_h3{
+    font-size: large;
+    font-style: italic;
+    color: darkblue;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+.btn-group button {
+    background-color: #4CAF50; /* Green background */
+    border: 1px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}

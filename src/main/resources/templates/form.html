@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Pet Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- adding fonts to website to make it more attractive. Use google fonts bt referencing the css on the Google Fonts APIs CDN-->
+    <link href="https://fonts.googleapis.com/css?family=Rozha+One|Roboto" rel="stylesheet"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+
+<body class="bg">
+<!-- collapsable navbar begin -->
+<div th:replace="listrooms::mynav"></div>
+<!-- collapsable navbar end -->
+
+<div class="container">
+    <form action="#" th:action="@{/process}" th:object="${room}" method="post" class="form2_bg">
+        <h2>Room Form: </h2>
+        <input type="hidden" th:field="*{id}"/>
+        <div class="row inputst">
+            <label class="col-md-3 labelst"> Address :</label>
+            <input type="text" class="col-md-6" th:field="*{address}" placeholder="Address"/>
+            <span class="col-md-3" th:if="${#fields.hasErrors('address')}"
+                  th:errors="*{address}"></span><br/>
+        </div>
+        <div class="row inputst">
+            <label class="col-md-3 labelst"> City :</label>
+            <input type="text" class="col-md-6" th:field="*{city}" placeholder="City"/>
+            <span class="col-md-3" th:if="${#fields.hasErrors('city')}"
+                  th:errors="*{city}"></span><br/>
+        </div>
+        <div class="row inputst">
+            <label class="col-md-3 labelst"> State :</label>
+            <input type="text" class="col-md-6" th:field="*{state}" placeholder="State"/>
+            <span class="col-md-3" th:if="${#fields.hasErrors('state')}"
+                  th:errors="*{state}"></span><br/>
+        </div>
+        <div class="row inputst">
+            <label class="col-md-3 labelst"> Price :</label>
+            <input type="text" pattern="[0-9]+" class="col-md-6" th:field="*{price}" placeholder="Renting price"/>
+            <span class="col-md-3" th:if="${#fields.hasErrors('price')}"
+                  th:errors="*{price}"></span><br/>
+        </div>
+        <div class="row inputst">
+            <label class="col-md-3 labelst">Listing Date :</label>
+            <input type="text" class="col-md-6" th:field="*{listingDate}" placeholder="Listing Date"/>
+            <span class="col-md-3" th:if="${#fields.hasErrors('listingDate')}"
+                  th:errors="*{listingDate}"></span><br/>
+        </div>
+        <div class="row inputst">
+            <label class="col-md-3 labelst"> Description :</label>
+            <textarea rows="3" cols="60"  class="col-md-6" th:field="*{description}" ></textarea>
+            <span class="col-md-3"></span>
+
+        </div>
+        <div class="row inputst">
+            <label class="col-md-3 labelst"> Rules :</label>
+            <textarea rows="3" cols="60" class="col-md-6" th:field="*{rules}" ></textarea>
+            <span class="col-md-3"></span>
+        </div>
+        <div class="row inputst">
+            <label class="col-md-3 labelst"> Wifi :</label>
+            <div id="mode-group0" class="btn-group col-md-6" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    <input th:type="radio" th:field="*{wifi}" name="wifi" id="option1" th:value="Yes" value="*{wifi}" /> Yes
+                </label>
+                <label class="btn btn-primary">
+                    <input th:type="radio" th:field="*{wifi}" name="wifi" id="option2" th:value="No" value="*{wifi}"/> No
+                </label>
+            </div>
+            <span class="col-md-3"></span>
+        </div>
+        <div class="row inputst">
+            <label class="col-md-3 labelst"> Private Bathroom :</label>
+            <div id="mode-group1" class="btn-group col-md-6" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    <input th:type="radio" th:field="*{privateBathroom}" name="bathroom" id="option3" th:value="Yes"/> Yes
+                </label>
+                <label class="btn btn-primary">
+                    <input th:type="radio" th:field="*{privateBathroom}" name="bathroom" id="option4" th:value="No"/> No
+                </label>
+            </div>
+            <span class="col-md-3"></span>
+        </div>
+        <div class="row inputst">
+            <label class="col-md-3 labelst"> Cable :</label>
+            <div id="mode-group2" class="btn-group col-md-6" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    <input th:type="radio" th:field="*{cable}" name="cable" id="option5" th:value="None"/> None
+                </label>
+                <label class="btn btn-primary">
+                    <input th:type="radio" th:field="*{cable}" name="cable" id="option6" th:value="Basic"/> Basic
+                </label>
+                <label class="btn btn-primary">
+                    <input th:type="radio" th:field="*{cable}" name="cable" id="option7" th:value="Premium"/> Premium
+                </label>
+            </div>
+            <span class="col-md-3"></span>
+        </div>
+        <div class="row inputst">
+            <label class="col-md-3 labelst"> Rented :</label>
+            <div id="mode-group3" class="btn-group col-md-6" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    <input th:type="radio" th:field="*{rented}" name="rented" id="option8" th:value="Yes"/> Yes
+                </label>
+                <label class="btn btn-primary">
+                    <input th:type="radio" th:field="*{rented}" name="rented" id="option9" th:value="No"/> No
+                </label>
+            </div>
+            <span class="col-md-3"></span>
+        </div>
+        <br/>
+        <div class="col-md-12">
+            <input class="submitst" type="submit" value="Submit"/>
+        </div>
+    </form>
+</div>
+<!-- Latest compiled and minified JavaScript form jquery and the bootstrap-->
+<script
+        src="http://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>
